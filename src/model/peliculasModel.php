@@ -7,10 +7,10 @@ class PeliculasModel{
     public function __construct(){
         //$this->conexion = new mysqli('localhost','root','master4','db_peliculas_PHP');
         // Datos de conexión
-        $servername = DB_HOST;                        // o la dirección del servidor MySQL
-        $username = DB_USERNAME;                // nombre de usuario de MySQL
-        $password = DB_PASSWORD; // contraseña del usuario de MySQL
-        $dbname = DB_DATABASE;                  // nombre de la base de datos a la que te quieres conectar
+        $servername = 'DB_HOST';                        // o la dirección del servidor MySQL
+        $username = 'DB_USERNAME';                // nombre de usuario de MySQL
+        $password = 'DB_PASSWORD'; // contraseña del usuario de MySQL
+        $dbname = 'DB_DATABAS'E;                  // nombre de la base de datos a la que te quieres conectar
 
         // Crear conexión
         $this->conexion = new mysqli($servername, $username, $password, $dbname);
