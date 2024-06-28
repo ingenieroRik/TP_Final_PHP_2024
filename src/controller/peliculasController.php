@@ -97,7 +97,7 @@ $PeliculasModel= new peliculasModel();
 
         if (!empty($errores)) {
             $query = http_build_query(array_merge($errores, $_POST));
-            header("$url_front/pages/adminpeliculas.php?$query");
+            header("Location: $url_front/pages/adminpeliculas.php?$query");
             exit();
         }
 
@@ -119,11 +119,11 @@ $PeliculasModel= new peliculasModel();
         if (isset($resultado) && $resultado[0] === 'success') {
             $mensaje = $resultado[1];
             $_SESSION['mensaje'] = $mensaje;
-            header("$url_front/pages/adminpeliculas.php");
+            header("Location: $url_front/pages/adminpeliculas.php");
         } else {
             $error = isset($resultado) ? $resultado[1] : 'Error desconocido al guardar la película';
             $_SESSION['error'] = $error;
-            header("$url_front/pages/adminpeliculas.php");
+            header("Location: $url_front/pages/adminpeliculas.php");
         }
         exit();
         
@@ -200,7 +200,7 @@ $PeliculasModel= new peliculasModel();
 
         if (!empty($errores)) {
             $query = http_build_query(array_merge($errores, $_POST));
-            header("$url_front/pages/peliculaEditada.php?$query");
+            header("Location: $url_front/pages/peliculaEditada.php?$query");
             exit();
         }
 
@@ -230,7 +230,7 @@ $PeliculasModel= new peliculasModel();
                 header("Location: http://localhost:8000/pages/peliculaEditada.php");
             }
                 */
-                header("$url_front/pages/listados.html");
+                header("Location: $url_front/pages/listados.html");
             exit();
             
             
@@ -295,7 +295,7 @@ $PeliculasModel= new peliculasModel();
 
             $peliculas = json_encode($resultados);
             $_SESSION['peliculas'] = $peliculas;
-            header("$url_front/pages/peliculaBuscada.php");
+            header("Location: $url_front/pages/peliculaBuscada.php");
             exit();
 
 
