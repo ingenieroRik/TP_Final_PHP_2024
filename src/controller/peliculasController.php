@@ -6,8 +6,6 @@ $allowed_origins = ['https://cac-movies.zeabur.app'];
 if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
     header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
 }
-// Manejo de solicitudes OPTIONS
-
 
 //header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -304,19 +302,15 @@ $PeliculasModel= new peliculasModel();
     }
     /* *************************************************************************************************************************** */
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['buscar']) ){
-
-        
+      
             $buscar = $_GET['buscar'];
 
-
             $resultados = $PeliculasModel->buscarPelicula($buscar);
-            //echo json_encode($resultados);
-
+          
             $peliculas = json_encode($resultados);
             $_SESSION['peliculas'] = $peliculas;
             header("Location: $url_front/pages/peliculaBuscada.php");
             exit();
-
 
     }
 
