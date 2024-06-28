@@ -1,6 +1,12 @@
 <?php
-
 session_start();  // Iniciar sesión para manejar mensajes
+
+// Configuración de CORS
+$allowed_origins = ['https://cac-movies.zeabur.app'];
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+}
+
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
