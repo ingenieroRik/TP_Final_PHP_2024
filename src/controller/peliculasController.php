@@ -6,7 +6,11 @@ $allowed_origins = ['https://cac-movies.zeabur.app'];
 if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
     header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
 }
-
+// Manejo de solicitudes OPTIONS
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -28,7 +32,7 @@ $PeliculasModel= new peliculasModel();
 
 
     $url_front = $_ENV['URL_FRONT']; 
-    //$url_front = "https://cac-movies.zeabur.app";
+    
 
     /* ***************************************************************************************************************************************** */
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['buscar'])) {
