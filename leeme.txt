@@ -1,0 +1,3 @@
+para todos http://localhost:8001/
+para un id http://localhost:8001/?id=25
+para la imagen http://localhost:8001/assets/img/ran.jpg
