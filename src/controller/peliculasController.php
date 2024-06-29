@@ -227,7 +227,7 @@ $PeliculasModel= new peliculasModel();
                 $_POST['img_url']
             );
         }
-                echo json_encode($respusta);
+                echo json_encode($respuesta);
             exit();
 
     }
