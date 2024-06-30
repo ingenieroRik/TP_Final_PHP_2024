@@ -1,3 +1,10 @@
+
+EN LOCAL:
 para todos http://localhost:8001/
 para un id http://localhost:8001/?id=25
-para la imagen http://localhost:8001/assets/img/ran.jpg
+para la imagen http://localhost:5501/assets/img/ran.jpg
+
+DESPLEGADO EN ZEABUR:
+para todos https://peliculas-cac2024.zeabur.app/
+para un id https://peliculas-cac2024.zeabur.app/?id=25
+para la imagen https://peliculas-cac2024.zeabur.app/assets/img/pinocho.jpeg

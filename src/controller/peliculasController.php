@@ -104,7 +104,7 @@ $PeliculasModel= new peliculasModel();
             $errores['error7'] = 'La duración de la pelicula no debe estar vacío, debe ser de tipo numérico y no tener más de 4 caracteres';
 
         } else if (!isset($_POST['img_url']) || is_null($_POST['img_url']) || empty(($_POST['img_url'])) || strlen((string)$_POST['img_url']) > 256) {
-            $errores['error8'] = 'La película debe tener una imágen';
+            $errores['error8'] = 'La película debe tener una imágen menor a 2 Mb';
         }
 
         if (!empty($errores)) {
@@ -204,7 +204,7 @@ $PeliculasModel= new peliculasModel();
             $errores['error7'] = 'La duración de la pelicula no debe estar vacío, debe ser de tipo numérico y no tener más de 4 caracteres';
 
         } else if (!isset($_POST['img_url']) || is_null($_POST['img_url']) || empty(($_POST['img_url'])) || strlen((string)$_POST['img_url']) > 256) {
-            $errores['error8'] = 'La película debe tener una imágen';
+            $errores['error8'] = 'La película debe tener una imágen menor a 2 Mb';
         }
 
         if (!empty($errores)) {
