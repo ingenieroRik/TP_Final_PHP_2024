@@ -109,7 +109,7 @@ $PeliculasModel= new peliculasModel();
 
         if (!empty($errores)) {
             $query = http_build_query(array_merge($errores, $_POST));
-            header("Location: $url_front/pages/adminpeliculas.php?$query");
+            echo json_encode($errores);
             exit();
         }
 
@@ -209,7 +209,7 @@ $PeliculasModel= new peliculasModel();
 
         if (!empty($errores)) {
             $query = http_build_query(array_merge($errores, $_POST));
-            echo json_encode($resultado);
+            echo json_encode($errores);
             exit();
         }
 
