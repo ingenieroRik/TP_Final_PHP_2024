@@ -13,6 +13,14 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 header('content-type: application/json; charset=utf-8');
 
+// Manejar las solicitudes OPTIONS (preflight)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+
+
 // Depuración de datos recibidos para ver en la consola del vsc
 file_put_contents('php://stderr', print_r($_POST, true));
 file_put_contents('php://stderr', print_r($_FILES, true));
