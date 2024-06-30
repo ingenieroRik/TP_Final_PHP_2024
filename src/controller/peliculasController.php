@@ -1,20 +1,15 @@
 <?php
 
 // Configuración de CORS
-//$allowed_origins = ['https://cac-movies.zeabur.app'];
 
-$allowedOrigins = array('http://127.0.0.1:5500', 'https://cac-movies.zeabur.app');
+//$allowedOrigins = array('http://127.0.0.1:5500', 'https://cac-movies.zeabur.app');
 
+header('Access-Control-Allow-Origin: *'); //acceso a todos
 
-
-
-header('Access-Control-Allow-Origin: *');
-//header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 header('content-type: application/json; charset=utf-8');
-
 
 // Depuración de datos recibidos para ver en la consola del vsc
 file_put_contents('php://stderr', print_r($_POST, true));
