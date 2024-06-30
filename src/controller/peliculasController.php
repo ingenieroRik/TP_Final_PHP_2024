@@ -239,19 +239,19 @@ $PeliculasModel= new peliculasModel();
     // para borrar uso GET porque no hay forma que reconozca el DELETE
         //if ($_SERVER['REQUEST_METHOD'] === 'GET' ){
             if ($method === 'GET' && isset($_GET['action']) && $_GET['action'] === 'delete') {
-                //$id = $_GET['id'];
+                $id = $_GET['id'];
 
 
             // Obtener datos del cuerpo de la solicitud
             //parse_str(file_get_contents("php://input"), $_GET);
 
             // Intenta obtener el ID de la película de los datos enviados en el cuerpo de la solicitud
-            $id = $_GET['id'] ?? null;
+            //$id = $_GET['id'] ?? null;
 
             // Si no se encuentra en el cuerpo de la solicitud, intenta obtenerlo de la URL
-            if (is_null($id) || empty(trim($id))) {
-                $id = $_GET['id'] ?? null;
-            }
+            //if (is_null($id) || empty(trim($id))) {
+             //   $id = $_GET['id'] ?? null;
+           // }
 
             // Verifica si el ID de la película es válido
             if (is_null($id) || empty(trim($id))) {
