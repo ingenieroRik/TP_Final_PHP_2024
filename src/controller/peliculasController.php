@@ -30,7 +30,7 @@ require './src/model/peliculasModel.php';
 $PeliculasModel= new peliculasModel();
 
     /* ***************************************************************************************************************************************** */
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['buscar'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['buscar']) && !isset($_GET['delete'])) {
        
         $respuesta = (!isset($_GET['id'])) ? $PeliculasModel->getPeliculas() : $PeliculasModel->getPeliculas($_GET['id']);
         echo json_encode($respuesta);
