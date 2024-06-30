@@ -1,17 +1,9 @@
 <?php
 
 // Configuración de CORS
-$allowed_origins = ['https://cac-movies.zeabur.app'];
-
-
-
+//$allowed_origins = ['https://cac-movies.zeabur.app'];
 
 $allowedOrigins = array('http://127.0.0.1:5500', 'https://cac-movies.zeabur.app');
-$origin = $_SERVER['HTTP_ORIGIN'];
-
-if (in_array($origin, $allowedOrigins)) {
-    header("Access-Control-Allow-Origin: $origin");
-}
 
 
 
