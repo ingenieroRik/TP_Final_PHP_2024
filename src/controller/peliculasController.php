@@ -236,7 +236,8 @@ $PeliculasModel= new peliculasModel();
     }
 
     /* ************************************************************************************************************************* */
-        if ($_SERVER['REQUEST_METHOD'] === 'DELETE' ){
+    // para borrar uso GET porque no hay forma que reconozca el DELETE
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete'])){
             // Obtener datos del cuerpo de la solicitud
             parse_str(file_get_contents("php://input"), $_DELETE);
 
