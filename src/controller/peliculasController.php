@@ -142,9 +142,9 @@ $PeliculasModel= new peliculasModel();
            manejamos el PUT como POST, no pude que hacer que funcione como PUT,
            asi que verificamos que venga x POST pero con _method=PUT, arriba
            en le POST verificamos que no sea _method=PUT */
-       if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method']) && strtoupper($_POST['_method']) === 'PUT') { 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method']) && strtoupper($_POST['_method']) === 'PUT') { 
         parse_str(file_get_contents("php://input"), $_PUT);
-        //$_PUT= json_decode(file_get_contents('php://input',true));
+        $_PUT= json_decode(file_get_contents('php://input',true));
 
          // para subir el archivo de imagen desde la PC
          if (isset($_FILES['img_url']) && $_FILES['img_url']['error'] === UPLOAD_ERR_OK) {
