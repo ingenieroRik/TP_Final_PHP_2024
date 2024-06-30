@@ -243,7 +243,7 @@ $PeliculasModel= new peliculasModel();
     }
 
     /* ************************************************************************************************************************* */
-        if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($_DELETE['_method']) === 'DELETE'){
+        if ($_SERVER['REQUEST_METHOD'] === 'DELETE' ){
             // Obtener datos del cuerpo de la solicitud
             parse_str(file_get_contents("php://input"), $_DELETE);
 
