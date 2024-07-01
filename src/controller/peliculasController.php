@@ -236,9 +236,10 @@ $PeliculasModel= new peliculasModel();
     }
 
     /* ************************************************************************************************************************* */
-        if ($_SERVER['REQUEST_METHOD'] === 'DELETE' ){
+        // vamos a simular un DELETE por GET ya que no funciona este método
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'delete' ){
             // Obtener datos del cuerpo de la solicitud
-            parse_str(file_get_contents("php://input"), $_DELETE);
+            //parse_str(file_get_contents("php://input"), $_DELETE);
 
             // Intenta obtener el ID de la película de los datos enviados en el cuerpo de la solicitud
             $id = $_DELETE['id'] ?? null;
