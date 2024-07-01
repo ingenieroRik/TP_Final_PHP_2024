@@ -238,7 +238,7 @@ $PeliculasModel= new peliculasModel();
     /* ************************************************************************************************************************* */
     // para borrar uso GET porque no hay forma que reconozca el DELETE
         //if ($_SERVER['REQUEST_METHOD'] === 'GET' ){
-            if ($method === 'GET' && isset($_GET['action']) && $_GET['action'] === 'delete') {
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'delete') {
                 $id = $_GET['id'];
 
 
