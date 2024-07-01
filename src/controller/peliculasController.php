@@ -30,7 +30,7 @@ require './src/model/peliculasModel.php';
 $PeliculasModel= new peliculasModel();
 
     /* ***************************************************************************************************************************************** */
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['buscar']) && !isset($_GET['delete'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['buscar'])) {
        
         $respuesta = (!isset($_GET['id'])) ? $PeliculasModel->getPeliculas() : $PeliculasModel->getPeliculas($_GET['id']);
         echo json_encode($respuesta);
@@ -236,18 +236,12 @@ $PeliculasModel= new peliculasModel();
     }
 
     /* ************************************************************************************************************************* */
-    // para borrar uso GET porque no hay forma que reconozca el DELETE
-        if ($_SERVER['REQUEST_METHOD'] === 'GET' ){
-
-           // if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'delete') {
-               // $id = $_GET['id'];
-
-
+        if ($_SERVER['REQUEST_METHOD'] === 'DELETE' ){
             // Obtener datos del cuerpo de la solicitud
-            parse_str(file_get_contents("php://input"), $_GET);
+            parse_str(file_get_contents("php://input"), $_DELETE);
 
             // Intenta obtener el ID de la película de los datos enviados en el cuerpo de la solicitud
-            $id = $_GET['id'] ?? null;
+            $id = $_DELETE['id'] ?? null;
 
             // Si no se encuentra en el cuerpo de la solicitud, intenta obtenerlo de la URL
             if (is_null($id) || empty(trim($id))) {
