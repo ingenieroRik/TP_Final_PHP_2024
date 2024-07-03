@@ -37,7 +37,7 @@ $PeliculasModel= new peliculasModel();
     }
     
     /* ****************************************************************************************************************************************** */
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($_POST['_method']) || strtoupper($_POST['_method']) !== 'PUT')) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($_POST['_method']) || strtoupper($_POST['_method']) !== 'PUT') || $_POST['action'] != 'auth'  ) {
      
         // para subir el archivo de imagen desde la PC
         if (isset($_FILES['img_url']) && $_FILES['img_url']['error'] === UPLOAD_ERR_OK) {
